@@ -1,5 +1,7 @@
 extends Area2D
 
+var Player = -1;
+var Attack = 0;
 var Life = 0.1;
 
 func _ready():
@@ -11,9 +13,5 @@ func _process(delta):
 		queue_free();
 
 func _on_Jab_body_entered(body):
-	if (body.has_method("_jab") == true):
-		body.Knocked = true;
-		if ($Sprite.flip_h == false):
-			body.Vel = Vector2(1000, -500);
-		else:
-			body.Vel = Vector2(-1000, -500);
+	if (body.has_method("jab") == true && body.Player != Player):
+		body.jab(Attack, $Sprite.flip_h);
