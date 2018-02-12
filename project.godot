@@ -11,9 +11,13 @@ config_version=3
 [application]
 
 config/name="Ultimate Wizards IV"
-run/main_scene="res://Scenes/Arena.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 run/name="Ultimate Wizards IV"
+
+[autoload]
+
+God="*res://Resources/God.gd"
 
 [display]
 
